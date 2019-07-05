@@ -34,7 +34,7 @@ public class Produto {
 	//Métodos:
 	public String etiquetaPreco() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(nome + "Preço: R$ " + String.format("%.2f", preco));
+		sb.append(nome + " - " + "Preço: R$ " + String.format("%.2f", preco));
 		return sb.toString();
 	}
 }

@@ -30,9 +30,8 @@ public class ProdutoUsado extends Produto {
 	//Métodos:
 	@Override
 	public final String etiquetaPreco() {
-		super.toString();
 		StringBuilder sb = new StringBuilder();
-		sb.append(sdf.format(dataFabricacao));
+		sb.append(super.etiquetaPreco() + " - Usado - Data de fabricação: " + sdf.format(dataFabricacao));
 		return sb.toString();
 	}
 

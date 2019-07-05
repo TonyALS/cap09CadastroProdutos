@@ -32,8 +32,9 @@ public class ProdutoImportado extends Produto{
 	@Override
 	public final String etiquetaPreco() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(nome + "Preço: R$ " + String.format("%.2f", precoTotal())); 
-		sb.append("(Alfândega: " + String.format("%.2f", taxaAlfandega));
+		
+		sb.append(nome + " - Preço: R$ " + String.format("%.2f", precoTotal()) + " "); 
+		sb.append("(Alfândega: R$ " + String.format("%.2f", taxaAlfandega) + ")");
 		return sb.toString();
 	}
 	
