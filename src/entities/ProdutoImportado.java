@@ -25,7 +25,7 @@ public class ProdutoImportado extends Produto{
 	
 	//Métodos:
 	public Double precoTotal() {
-		return preco + taxaAlfandega;
+		return getPreco() + taxaAlfandega;
 	}
 	
 	@Override

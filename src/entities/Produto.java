@@ -2,8 +2,8 @@ package entities;
 
 public class Produto {
 	
-	protected String nome;
-	protected Double preco;
+	private String nome;
+	private Double preco;
 	
 	//Constructors
 	public Produto () {
