@@ -36,26 +36,27 @@ public class Programa {
 			double precoProduto = sc.nextDouble();
 			
 			if(tipoProduto == 'C') {
-				Produto produtoComum = new Produto(nomeProduto, precoProduto);
-				list.add(produtoComum);
+				//Podemos fazer das duas formas:
+				//1ª:
+				//Produto produtoComum = new Produto(nomeProduto, precoProduto);
+				//list.add(produtoComum);
+				//2ª: A segunda economiza código:
+				list.add(new Produto(nomeProduto, precoProduto));
 			}else if(tipoProduto == 'U') {
 				System.out.print("Digite a data de fabricação (DD/MM/AAAA): ");
 				Date dataFabricacao = sdf.parse(sc.next());
-				Produto produtoUsado = new ProdutoUsado(nomeProduto, precoProduto, dataFabricacao);
-				list.add(produtoUsado);
+				list.add(new ProdutoUsado(nomeProduto, precoProduto, dataFabricacao));
 			}else {
 				System.out.print("Digite o custo alfandegário: ");
 				double taxaAlfandega = sc.nextDouble();
-				Produto produtoImportado = new ProdutoImportado(nomeProduto, precoProduto, taxaAlfandega);
-				list.add(produtoImportado);
+				list.add(new ProdutoImportado(nomeProduto, precoProduto, taxaAlfandega));
 			}
 		}
-		
+		System.out.println();
 		System.out.println("PREÇOS");
 		for(Produto prod : list) {
 			System.out.println(prod.etiquetaPreco());
 		}
-		
 		sc.close();
 	}
 }

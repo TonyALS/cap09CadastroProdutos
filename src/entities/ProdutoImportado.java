@@ -28,14 +28,13 @@ public class ProdutoImportado extends Produto{
 		return preco + taxaAlfandega;
 	}
 	
-	//Verificar a implementação deste override:
 	@Override
 	public final String etiquetaPreco() {
-		StringBuilder sb = new StringBuilder();
-		
-		sb.append(nome + " - Preço: R$ " + String.format("%.2f", precoTotal()) + " "); 
-		sb.append("(Alfândega: R$ " + String.format("%.2f", taxaAlfandega) + ")");
-		return sb.toString();
+		return getNome() 
+				+ " R$ " 
+				+ String.format("%.2f", precoTotal())
+				+ " (Custo alfandegário: R$ " 
+				+ String.format("%.2f", taxaAlfandega)
+				+ ")";
 	}
-	
 }
